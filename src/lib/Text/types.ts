@@ -3,5 +3,7 @@ export interface TextProps {
     subtext?: boolean,
     bold?: boolean,
     italic?: boolean,
-    align?: 'left' | 'center' | 'right',
+    align?: Alignment | string,
 }
+
+export type Alignment = 'left' | 'center' | 'right' | 'justify';

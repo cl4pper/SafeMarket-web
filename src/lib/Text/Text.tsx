@@ -17,6 +17,7 @@ const Text = (props: Types.TextProps) => {
             'Text--italic': italic,
             'Text--center': align === 'center',
             'Text--right': align === 'right',
+            'Text--justify': align === 'justify',
         })}>
             {text}
         </p>

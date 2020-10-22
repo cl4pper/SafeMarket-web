@@ -1,4 +1,5 @@
 .Text {
+    width: 100%;
     @include fontText("ms");
 
     &--subtext {
@@ -11,5 +12,17 @@
 
     &--italic {
         font-style: italic;
+    }
+
+    &--right {
+        text-align: right;
+    }
+
+    &--center {
+        text-align: center;
+    }
+
+    &--justify {
+        text-align: justify;
     }
 }
