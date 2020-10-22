@@ -6,15 +6,20 @@ module.exports = ({ config }) => {
 			extensions: ['.js', '.jsx', '.ts', '.tsx'],
 			alias: {
 				'@styles': path.resolve(__dirname, '../src/styles'),
+				'@lib': path.resolve(__dirname, '../src/lib'),
+				'@components': path.resolve(__dirname, '../src/components'),
 			}
 		},
 		rules: [
 			{
 				test: /\.(js|jsx)?$/,
 				exclude: /node_modules/,
-				use: {
-					loader: 'babel-loader'
-				}
+				use: { loader: 'babel-loader' }
+			},
+			{
+				test: /\.(ts|tsx)?$/,
+				exclude: /node_modules/,
+				use: { loader: 'ts-loader' }
 			},
 			{
 				test: /\.scss$/,

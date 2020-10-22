@@ -5,18 +5,25 @@ $font-family-Poppins: 'Poppins', sans-serif;
 $font-family-Teko: 'Teko', sans-serif;
 
 @mixin fontText($size: "sm") {
+  $size-text-sm: 12px;
+  $size-text-md: 16px;
+  $size-text-lg: 20px;
+
   font-family: $font-family-Roboto;
 
   @if $size == "sm" {
-    font-size: 16px;
+    font-size: $size-text-sm;
+    line-height: $size-text-sm;
   }
 
   @if $size == "md" {
-    font-size: 24px;
+    font-size: $size-text-md;
+    line-height: $size-text-md;
   }
 
   @if $size == "lg" {
-    font-size: 32px;
+    font-size: $size-text-lg;
+    line-height: $size-text-lg;
   }
 }
 

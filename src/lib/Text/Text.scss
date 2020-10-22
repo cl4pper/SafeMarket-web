@@ -1,0 +1,15 @@
+.Text {
+    @include fontText("ms");
+
+    &--subtext {
+        @include fontText("sm");
+    }
+
+    &--bold {
+        font-weight: 700;
+    }
+
+    &--italic {
+        font-style: italic;
+    }
+}
