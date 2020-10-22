@@ -1,5 +1,5 @@
-export interface TextProps {
-    text: string,
+export interface TitleProps {
+    title: string,
     small?: boolean,
     bold?: boolean,
     italic?: boolean,

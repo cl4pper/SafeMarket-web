@@ -28,17 +28,24 @@ $font-family-Teko: 'Teko', sans-serif;
 }
 
 @mixin fontTitle($size: "sm") {
+  $size-title-sm: 24px;
+  $size-title-md: 32px;
+  $size-title-lg: 48px;
+
   font-family: $font-family-Roboto;
 
   @if $size == "sm" {
-    font-size: 32px;
+    font-size: $size-title-sm;
+    line-height: $size-title-sm;
   }
 
   @if $size == "md" {
-    font-size: 48px;
+    font-size: $size-title-md;
+    line-height: $size-title-md;
   }
 
   @if $size == "lg" {
-    font-size: 64px;
+    font-size: $size-title-lg;
+    line-height: $size-title-lg;
   }
 }

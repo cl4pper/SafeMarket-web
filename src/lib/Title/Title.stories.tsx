@@ -2,14 +2,14 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs';
-import { Text } from './Text';
+import { Title } from './Title';
 import * as Types from './types';
 
-const stories = storiesOf('Text', module);
+const stories = storiesOf('Title', module);
 stories.addDecorator(withKnobs);
 
-const props: Types.TextProps = {
-	text: 'Text comes here',
+const props: Types.TitleProps = {
+	title: 'Title comes here',
     small: false,
     bold: false,
     italic: false,
@@ -24,8 +24,8 @@ const options = {
 }
 
 stories.add('Default', () => (
-    <Text
-        text={text('text', props.text, null)}
+    <Title
+        title={text('text', props.title, null)}
         align={select('align', options, 'left')} 
         small={boolean('small', props.small)}
         bold={boolean('bold', props.bold)}
