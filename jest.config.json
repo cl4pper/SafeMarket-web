@@ -1,6 +1,7 @@
 {
-  "testRegex": "((\\.|/*.)(spec))\\.js?$",
+  "testRegex": "((\\.|/*.)(spec))\\.(ts|tsx)?$",
   "moduleNameMapper": {
     "^.+\\.(css|less|scss)$": "identity-obj-proxy"
-  }
+  },
+  "setupFilesAfterEnv": ["./testSetup.ts"]
 }
