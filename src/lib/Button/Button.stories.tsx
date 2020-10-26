@@ -17,6 +17,7 @@ const props: Types.ButtonProps = {
 
 stories.add('Default', () => (
     <Button
+        id={props.id}
         label={text('text', props.label, null)}
         onClick={() => props.onClick()} 
         secondary={boolean('secondary', props.secondary)} />
