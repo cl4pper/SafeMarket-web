@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import { Text } from './Text';
 import * as Types from './types';
@@ -10,62 +10,68 @@ const props: Types.TextProps = {
     text: textValue,
 };
 
+// METHOD TO CREATE COMPONENT TO BE TESTED
+function createComponent(props: Types.TextProps) {
+    const testProps: Types.TextProps = { ...props };
+    const { getByText } = render(<Text {...testProps} />);
+
+    return getByText(textValue);
+};
+
 describe('Text', () => {
-    const wrapper = shallow(<Text {...props} />);
 
-    it('should render the text prop value', () => {
-        expect(wrapper.text()).toBe(textValue);
-    });
+    it('should be rendered', () => {
+        const component = createComponent({ ...props });
 
-    it('should has a Text class', () => {
-        expect(wrapper.is('.Text')).toBe(true);
+        expect(component.classList).toContain('Text');
+        expect(component.textContent).toBe(textValue);
     });
 
     describe('when small prop is set', () => {
         it('should has a Text--small class', () => {
-            const testProps: Types.TextProps = { ...props, small: true };
-            const wrapper = shallow(<Text {...testProps} />);
-            expect(wrapper.is('.Text--small')).toBe(true);
+            const component = createComponent({ ...props, small: true });
+    
+            expect(component.classList).toContain('Text--small');
         });
     });
 
     describe('when bold prop is set', () => {
         it('should has a Text--bold class', () => {
-            const testProps: Types.TextProps = { ...props, bold: true };
-            const wrapper = shallow(<Text {...testProps} />);
-            expect(wrapper.is('.Text--bold')).toBe(true);
+            const component = createComponent({ ...props, bold: true });
+    
+            expect(component.classList).toContain('Text--bold');
         });
     });
 
     describe('when italic prop is set', () => {
         it('should has a Text--italic class', () => {
-            const testProps: Types.TextProps = { ...props, italic: true };
-            const wrapper = shallow(<Text {...testProps} />);
-            expect(wrapper.is('.Text--italic')).toBe(true);
+            const component = createComponent({ ...props, italic: true });
+    
+            expect(component.classList).toContain('Text--italic');
         });
     });
 
-    describe('when align prop is equal to center', () => {
+    describe('when align prop is center', () => {
         it('should has a Text--center class', () => {
-            const testProps: Types.TextProps = { ...props, align: 'center' };
-            const wrapper = shallow(<Text {...testProps} />);
-            expect(wrapper.is('.Text--center')).toBe(true);
+            const component = createComponent({ ...props, align: 'center' });
+    
+            expect(component.classList).toContain('Text--center');
         });
     });
 
-    describe('when align prop is equal to right', () => {
+    describe('when align prop is right', () => {
         it('should has a Text--right class', () => {
-            const testProps: Types.TextProps = { ...props, align: 'right' };
-            const wrapper = shallow(<Text {...testProps} />);
-            expect(wrapper.is('.Text--right')).toBe(true);
+            const component = createComponent({ ...props, align: 'right' });
+    
+            expect(component.classList).toContain('Text--right');
         });
     });
 
-    describe('when align prop is equal to justify', () => {
+    describe('when align prop is justify', () => {
         it('should has a Text--justify class', () => {
-            const testProps: Types.TextProps = { ...props, align: 'justify' };
-            const wrapper = shallow(<Text {...testProps} />);
-            expect(wrapper.is('.Text--justify')).toBe(true);
+            const component = createComponent({ ...props, align: 'justify' });
+    
+            expect(component.classList).toContain('Text--justify');
         });
     });
 })
