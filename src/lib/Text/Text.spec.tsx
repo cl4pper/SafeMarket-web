@@ -29,6 +29,7 @@ describe('Text', () => {
     it('should render prop text', () => {
         const component = createComponent({ ...props });
 
+        expect(component.classList).toContain('Text');
         expect(component.textContent).toBe(textValue);
     });
 
