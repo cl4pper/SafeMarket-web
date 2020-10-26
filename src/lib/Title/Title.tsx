@@ -17,7 +17,6 @@ const Title = (props: Types.TitleProps) => {
             'Title--italic': italic,
             'Title--center': align === 'center',
             'Title--right': align === 'right',
-            'Title--justify': align === 'justify',
         })}>
             {title}
         </p>
