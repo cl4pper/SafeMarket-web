@@ -1,0 +1,12 @@
+.Chip {
+    width: fit-content;
+    padding: 6px 12px;
+    box-sizing: content-box;
+    background-color: $color-primary;
+    border-radius: 20px;
+    margin: 0;
+    @include fontText("sm");
+    color: $color-text-light;
+    text-align: center;
+    cursor: default;
+}
