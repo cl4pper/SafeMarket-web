@@ -7,7 +7,7 @@
     @include fontText("md");
     color: $color-text-light;
     font-weight: bold;
-    @include shadow($color-primary, "md");
+    @include shadow("md", $color-primary);
     cursor: pointer;
     outline: none;
 
@@ -19,7 +19,7 @@
     &:active {
         position: relative;
         top: 1px;
-        @include shadow($color-primary, "sm");
+        @include shadow("sm", $color-primary);
     }
 
     &--secondary {

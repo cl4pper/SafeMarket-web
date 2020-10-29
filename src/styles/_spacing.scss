@@ -1,0 +1,22 @@
+@function spacing($size: "md") {
+
+  @if $size == "xs" {
+    @return 4px;
+  }
+
+  @if $size == "sm" {
+    @return 8px;
+  }
+
+  @if $size == "md" {
+    @return 10px;
+  }
+
+  @if $size == "lg" {
+    @return 20px;
+  }
+
+  @if $size == "xg" {
+    @return 40px;
+  }
+}

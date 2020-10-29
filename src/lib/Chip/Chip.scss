@@ -1,6 +1,6 @@
 .Chip {
     width: fit-content;
-    padding: 6px 12px;
+    padding: spacing("xs") spacing("md");
     box-sizing: content-box;
     background-color: $color-primary;
     border-radius: 20px;
