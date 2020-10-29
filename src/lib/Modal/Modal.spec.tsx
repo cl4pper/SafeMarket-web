@@ -4,7 +4,6 @@ import { screen } from '@testing-library/dom';
 
 import { Modal } from './Modal';
 import * as Types from './types';
-import { createTransformer } from 'babel-jest';
 
 const modalTitle: string = 'Modal title';
 
