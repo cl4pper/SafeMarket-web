@@ -12,3 +12,21 @@
       box-shadow: 0 5px 10px $color;
     }
 }
+
+@mixin border($size: "md", $color: rgba(255, 255, 255, 0)) {
+  border-radius: 8px;
+  border-style: solid;
+  border-color: $color;
+
+  @if $size == "sm" {
+    border-width: 1px;
+  }
+
+  @if $size == "md" {
+    border-width: 2px;
+  }
+
+  @if $size == "lg" {
+    border-width: 4px;
+  }
+}
