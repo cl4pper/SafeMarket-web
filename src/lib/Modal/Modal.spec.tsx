@@ -1,6 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import { screen } from '@testing-library/dom';
+import { render, screen } from '@testing-library/react';
 
 import { Modal } from './Modal';
 import * as Types from './types';
@@ -13,43 +12,34 @@ const props: Types.ModalProps = {
     content: <p>Hello, Modal</p>
 };
 
-//  METHOD TO CALL MODAL AND GET RESPECTIVE ROLE ELEMENT
-function getByRole(innerProps: Types.ModalProps, role: string) {
-    render(<Modal {...innerProps} />);
-    const wrapper = screen.queryByRole(role);
-
-    return wrapper;
-};
-
-// METHOD TO CALL MODAL
-function createModalContent(innerProps: Types.ModalProps) {
-    const component = render(<Modal {...innerProps} />);
-
-    return component;
-};
-
 describe('Modal', () => {
+    beforeEach(() => {
+        render(<Modal {...props} />);
+    });
 
     it('should be rendered', () => {
-        const component = getByRole({ ...props }, 'dialog');
-        const parent = component.parentElement;
+        const component = screen.queryByTestId('Modal');
         
-        expect(parent).toBeTruthy();
-        expect(parent.className).toContain('Modal');
+        expect(component).toBeTruthy();
+    });
+
+    it('should render a content box', () => {
+        const component = screen.queryByRole('dialog');
+        
+        expect(component).toBeTruthy();
     });
 
     it('should have a title', () => {
-        const component = createModalContent({ ...props });
-        const children = component.queryByText(props.title);
+        const component = screen.queryByText(modalTitle);
+        const title = component.textContent;
 
-        expect(children.className).toBe('Modal__title');
+        expect(title).toBe(props.title);
     });
 
     it('should have a content', () => {
-        const component = getByRole({ ...props }, 'tree');
-        const content = component.childElementCount;
+        const component = screen.queryByRole('tree');
 
-        expect(component.className).toBe('Modal__content');
-        expect(content).toBeGreaterThan(0);
+        expect(component).toBeTruthy();
+        expect(component.childElementCount).toBeGreaterThan(0);
     });
 })

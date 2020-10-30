@@ -7,17 +7,18 @@ import './Modal.scss';
 // TYPES
 import * as Types from './types';
 
+// COMPONENTS
+import { Title } from '@lib';
+
 const Modal = (props: Types.ModalProps) => {
     const { title, visible, content } = props;
 
     return (
-        <div className={classNames('Modal', {
+        <div data-testid="Modal" className={classNames('Modal', {
             'Modal--visible': visible
         })}>
             <div role="dialog" className="Modal__box">
-                <p className="Modal__title">
-                    { title }
-                </p>
+                <Title small title={title}/>
                 <div role="tree" className="Modal__content">
                     { content }
                 </div>

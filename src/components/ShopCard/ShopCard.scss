@@ -1,7 +1,7 @@
 .ShopCard {
     width: 280px;
     padding: spacing("lg");
-    border-radius: 8px;
+    @include border();
     @include shadow("md", $color-grey-1);
 
     &__bottom {
