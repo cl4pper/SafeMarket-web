@@ -8,7 +8,7 @@ import './Text.scss';
 import * as Types from './types';
 
 const Text = (props: Types.TextProps) => {
-    const { text, small, bold, italic, align } = props;
+    const { children, small, bold, italic, align } = props;
 
     return (
         <p className={classNames('Text', {
@@ -19,7 +19,7 @@ const Text = (props: Types.TextProps) => {
             'Text--right': align === 'right',
             'Text--justify': align === 'justify',
         })}>
-            {text}
+            {children}
         </p>
     )
 }

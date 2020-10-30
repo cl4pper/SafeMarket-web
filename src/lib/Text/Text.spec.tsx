@@ -7,7 +7,7 @@ import * as Types from './types';
 const textValue: string = 'Text comes heres';
 
 const props: Types.TextProps = {
-    text: textValue,
+    children: textValue,
 };
 
 // METHOD TO CREATE COMPONENT TO BE TESTED

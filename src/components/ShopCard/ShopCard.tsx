@@ -20,9 +20,13 @@ const ShopCard = (props: Types.ShopCardProps) => {
                     <Chip label={shop.type} />
                 </ul>
                 <div className="ShopCard__contacts" data-testid="ShopCard__contacts">
-                    <Text bold text="Contatos:" />
-                    <Text small text={shop.info.phone} />
-                    <Text small text={shop.info.email} />
+                    <Text bold>Contatos:</Text>
+                    <Text small>
+                        <b>Telefone: </b>{shop.info.phone}
+                    </Text>
+                    <Text small>
+                        <b>Email: </b>{shop.info.email}
+                    </Text>
                 </div>
             </div>
         </div>

@@ -1,5 +1,9 @@
 @function spacing($size: "md") {
 
+  @if $size == "xxs" {
+    @return 2px;
+  }
+
   @if $size == "xs" {
     @return 4px;
   }
@@ -16,7 +20,11 @@
     @return 20px;
   }
 
-  @if $size == "xg" {
+  @if $size == "xl" {
+    @return 32px;
+  }
+
+  @if $size == "xxl" {
     @return 40px;
   }
 }

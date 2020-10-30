@@ -1,5 +1,8 @@
+import { ReactNode } from "react";
+
 export interface TextProps {
-    text: string,
+    // children: React.PropsWithChildren<{}>,
+    children: ReactNode | string,
     small?: boolean,
     bold?: boolean,
     italic?: boolean,

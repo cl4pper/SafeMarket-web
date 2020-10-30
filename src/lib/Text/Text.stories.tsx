@@ -9,7 +9,7 @@ const stories = storiesOf('Text', module);
 stories.addDecorator(withKnobs);
 
 const props: Types.TextProps = {
-	text: 'Text comes here',
+	children: 'Text comes here',
     small: false,
     bold: false,
     italic: false,
@@ -25,9 +25,10 @@ const options = {
 
 stories.add('Default', () => (
     <Text
-        text={text('text', props.text, null)}
         align={select('align', options, 'left')} 
         small={boolean('small', props.small)}
         bold={boolean('bold', props.bold)}
-        italic={boolean('italic', props.italic)} />
+        italic={boolean('italic', props.italic)}>
+            Text
+        </Text>
 ));

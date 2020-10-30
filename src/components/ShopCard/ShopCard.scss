@@ -5,7 +5,7 @@
     @include shadow("md", $color-grey-1);
 
     &__bottom {
-        margin-top: 40px;
+        margin-top: spacing("xxl");
     }
 
     &__labels {
@@ -27,6 +27,10 @@
 
         .Text:first-child {
             margin-bottom: spacing("xs");
+        }
+
+        .Text {
+            margin-bottom: spacing("xxs");
         }
     }
 }
