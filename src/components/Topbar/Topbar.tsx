@@ -6,8 +6,8 @@ import './Topbar.scss';
 // COMPONENTS
 import { Button } from '@lib';
 
-const Topbar = () => {
-    const logo: JSX.Element = <svg role="img " />
+const Topbar = (): JSX.Element => {
+    const logo: JSX.Element = <svg role="img" className="Topbar__logo" />
 
     return (
         <header role="banner" data-testid="Topbar" className="Topbar">

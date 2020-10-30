@@ -5,7 +5,6 @@ import { Topbar } from './Topbar';
 import * as Types from './types';
 
 const testId: string = 'Topbar';
-const titleId: string = 'topbar-title';
 const buttonId: string = 'register-button';
 
 const props: Types.TopbarProps = {
