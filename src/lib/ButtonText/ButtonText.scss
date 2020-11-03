@@ -1,0 +1,14 @@
+.ButtonText {
+    width: fit-content;
+    font-style: italic;
+    @include fontText("md");
+    cursor: pointer;
+
+    &--small {
+        @include fontText("sm");
+    }
+
+    &--underline {
+        border-bottom: 1px dotted $color-dark;
+    }
+}
