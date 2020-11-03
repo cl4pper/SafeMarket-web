@@ -5,6 +5,7 @@ import { Topbar } from './Topbar';
 import * as Types from './types';
 
 const testId: string = 'Topbar';
+const filterId: string = 'topbar-filters';
 const buttonId: string = 'register-button';
 
 const props: Types.TopbarProps = {
@@ -26,7 +27,11 @@ describe('Topbar', (): void => {
         expect(screen.queryByRole('img')).toBeTruthy();
     });
 
-    // render filter menu
+    // render filter text
+    // it('should render filter text', () => {
+    //     expect(screen.queryByTestId(filterId)).toBeTruthy();
+    //     expect(screen.queryByTestId(filterId).textContent).toBe('Filtros');
+    // });
 
     // render register button
     it('should render register button', () => {
