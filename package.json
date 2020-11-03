@@ -4,8 +4,10 @@
 	"description": "A boilerplate for future react projects.",
 	"main": "index.js",
 	"scripts": {
-		"test": "jest --config ./jest.config.json",
-		"test:watch": "npm run test -- --watch",
+		"test": "jest --watch --config ./jest.config.json",
+		"test:verb": "jest --watch --verbose=true --config ./jest.config.json",
+		"test:lib": "jest src/lib --watch --config ./jest.config.json",
+		"test:comp": "jest src/components --watch --config ./jest.config.json",
 		"app": "webpack-dev-server --open",
 		"lint": "prettier --write '**/*.jsx'",
 		"stories": "start-storybook --port 9090",
