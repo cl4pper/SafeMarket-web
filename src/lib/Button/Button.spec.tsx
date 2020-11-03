@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 
 import { Button } from './Button';
 import * as Types from './types';
@@ -43,5 +43,12 @@ describe('Button', () => {
         });
     });
 
-    // test onClick event
+    // test button click
+    it('should run action when clicked', () => {
+        const action = jest.fn();
+        const component = createComponent({ ...props, onClick: () => action() });
+
+        fireEvent.click(component);
+        expect(action).toHaveBeenCalled();
+    });
 })
