@@ -4,18 +4,25 @@ import React from 'react';
 import './Topbar.scss';
 
 // COMPONENTS
-import { Button } from '@lib';
+import { Button, Text } from '@lib';
 
 const Topbar = (): JSX.Element => {
     const logo: JSX.Element = <svg role="img" className="Topbar__logo" />
 
     return (
-        <header role="banner" data-testid="Topbar" className="Topbar">
+        <header className="Topbar" role="banner" data-testid="Topbar">
             { logo }
-            <Button
-                id="register-button"
-                label="Cadastre-se"
-                onClick={() => console.log('Pressed!')} />
+            <div className="Topbar__right">
+                <div className="Topbar__filters"
+                    id="topbar-filters"
+                    data-testid="topbar-filters">
+                    <Text italic>Filtros</Text>
+                </div>
+                <Button
+                    id="register-button"
+                    label="Cadastre-se"
+                    onClick={() => console.log('Pressed!')} />
+            </div>
         </header>
     )
 }
