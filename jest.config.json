@@ -3,7 +3,8 @@
   "moduleNameMapper": {
     "^.+\\.(css|less|scss)$": "identity-obj-proxy",
     "^@root(.*)$": "<rootDir>/src$1",
-    "^@lib(.*)$": "<rootDir>/src/lib$1"
+    "^@lib(.*)$": "<rootDir>/src/lib$1",
+    "^@components(.*)$": "<rootDir>/src/components$1"
   },
   "setupFilesAfterEnv": ["./testSetup.ts"]
 }
