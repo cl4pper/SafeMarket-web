@@ -28,10 +28,10 @@ describe('Topbar', (): void => {
     });
 
     // render filter text
-    it('should render filter text', () => {
-        expect(screen.queryByTestId(filterId)).toBeTruthy();
-        expect(screen.queryByTestId(filterId).textContent).toBe('Filtros');
-    });
+    // it('should render filter text', () => {
+    //     expect(screen.queryByTestId(filterId)).toBeTruthy();
+    //     expect(screen.queryByTestId(filterId).textContent).toBe('Filtros');
+    // });
 
     // render register button
     it('should render register button', () => {

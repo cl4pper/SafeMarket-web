@@ -16,7 +16,6 @@ const Topbar = (): JSX.Element => {
                 <div className="Topbar__filters"
                     id="topbar-filters"
                     data-testid="topbar-filters">
-                    <Text italic>Filtros</Text>
                 </div>
                 <Button
                     id="register-button"
